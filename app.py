@@ -26,7 +26,7 @@ st.set_page_config(
 # define file paths and accepted model filenames
 app_dir = Path(__file__).resolve().parent
 model_candidates = [
-    app_dir / "online_shopper_model.joblib",
+    app_dir / "Online_shopper_intention_GB_model.joblib",
     app_dir / "model.pkl",
     app_dir / "Online_shopper_intention_GB_model",
     app_dir / "Online_shopper_intention_GB_model.joblib",
