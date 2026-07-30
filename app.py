@@ -1102,14 +1102,14 @@ if model_path is None:
     st.stop()
 
 try:
-    bundle = load_model_bundle(model_path)
-except Exception as error:
-    st.error(
-        "The trained model could not be loaded. Export the model bundle again "
-        "and make sure it contains the model and feature columns."
-    )
-    with st.expander("Show technical details"):
-        st.exception(error)
+    bundle = load_model_bundle(MODEL_PATH)
+
+except Exception as exc:
+    st.error("The trained model could not be loaded.")
+
+    # show the actual deployment error
+    st.exception(exc)
+
     st.stop()
 
 model = bundle["model"]
