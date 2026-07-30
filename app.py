@@ -1101,6 +1101,8 @@ if model_path is None:
     )
     st.stop()
 
+MODEL_PATH = "Online_shopper_intention_GB_model"
+
 try:
     bundle = load_model_bundle(MODEL_PATH)
 
