@@ -26,10 +26,10 @@ st.set_page_config(
 # define file paths and accepted model filenames
 app_dir = Path(__file__).resolve().parent
 model_candidates = [
-    app_dir / "Online_shopper_intention_GB_model.joblib",
-    app_dir / "model.pkl",
     app_dir / "Online_shopper_intention_GB_model",
     app_dir / "Online_shopper_intention_GB_model.joblib",
+    app_dir / "online_shopper_model.joblib",
+    app_dir / "model.pkl",
 ]
 
 
@@ -1090,8 +1090,8 @@ if model_path is None:
     )
     st.code(
         "MLDP_project/\n"
-        "├── streamlit_app.py\n"
-        "├── online_shopper_model.joblib\n"
+        "├── app.py\n"
+        "├── Online_shopper_intention_GB_model\n"
         "└── requirements.txt"
     )
     st.caption(
@@ -1101,10 +1101,8 @@ if model_path is None:
     )
     st.stop()
 
-MODEL_PATH = "Online_shopper_intention_GB_model"
-
 try:
-    bundle = load_model_bundle(MODEL_PATH)
+    bundle = load_model_bundle(model_path)
 
 except Exception as exc:
     st.error("The trained model could not be loaded.")
